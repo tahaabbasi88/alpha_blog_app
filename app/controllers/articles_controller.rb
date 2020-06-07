@@ -2,6 +2,10 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   
   def show
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @article, status: 200 }
+    # end
   end
   
   def index
