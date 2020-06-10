@@ -21,6 +21,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    # temp variable to get the browser working
+    @article = User.first
 
     # respond_to do |format|
     #   if @article.save
