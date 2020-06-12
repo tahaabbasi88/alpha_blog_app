@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+
+  def show
+    @user = User.find(params[:id])
+    # adding an instance variable below, as articles are not going to show on user page without it 
+    @articles = @user.articles
+  end
+
   def new
     @user = User.new
   end
