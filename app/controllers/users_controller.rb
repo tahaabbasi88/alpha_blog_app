@@ -3,11 +3,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # adding an instance variable below, as articles are not going to show on user page without it 
-    @articles = @user.articles
+    @articles = @user.articles.paginate(page: params[:page], per_page: 5)
+
   end
 
   def index 
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   def new
